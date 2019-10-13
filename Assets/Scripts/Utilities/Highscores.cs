@@ -60,6 +60,7 @@ public static class Highscores {
 
     private static async Task<string> GetRequest (string url) {
         UnityWebRequest req = UnityWebRequest.Get (url);
+        req.SetRequestHeader("X-Authorization-Token", "73phpQdL#9XvioX4E#Nxpi89");
         await req.SendWebRequest ();
         if (req.isNetworkError || req.isHttpError) {
             Debug.Log (req.error);
@@ -75,6 +76,7 @@ public static class Highscores {
         req.uploadHandler = (UploadHandler) new UploadHandlerRaw (bodyRaw);
         req.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer ();
         req.SetRequestHeader ("Content-Type", "application/json");
+        req.SetRequestHeader("X-Authorization-Token", "73phpQdL#9XvioX4E#Nxpi89");
 
         await req.SendWebRequest ();
 
@@ -98,6 +100,7 @@ public static class Highscores {
         req.uploadHandler = (UploadHandler) new UploadHandlerRaw (bodyRaw);
         req.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer ();
         req.SetRequestHeader ("Content-Type", "application/json");
+        req.SetRequestHeader("X-Authorization-Token", "73phpQdL#9XvioX4E#Nxpi89");
 
         await req.SendWebRequest();
 
